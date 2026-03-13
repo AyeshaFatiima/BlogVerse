@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="/blogs"><i class="fa-solid fa-code"></i> BlogVerse</a>
+    <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav me-auto"> 
+        <a class="nav-link" href="/blogs">Discover</a>
+      </div> 
+      <div class="navbar-nav ms-auto">
+        <% if(currentUser){ %>
+          <a class="btn btn-primary btn-sm ms-2 me-3" href="/blogs/new">Write</a>
+          <a class="nav-link text-danger fw-bold" href="/logout">Logout</a>
+        <% }else{ %>
+          <a class="nav-link" href="/login">Login</a>
+          <a class="btn btn-primary btn-sm ms-2" href="/signup">Sign Up</a>
+        <% } %> 
+      </div>
+    </div>
+  </div>  
+</nav>

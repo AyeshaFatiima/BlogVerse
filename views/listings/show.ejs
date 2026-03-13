@@ -1,0 +1,27 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="row justify-content-center mt-3">
+    <div class="col-10 col-lg-7"> 
+        <img src="<%= blog.image %>" class="blog-header-img" alt="<%= blog.title %>">
+        
+        <div class="blog-content">
+            <h1 class="display-5 fw-bold mb-3"><%= blog.title %></h1>
+             
+            <div class="blog-meta">
+                <span><i class="fa-solid fa-user-pen me-2"></i>Written by <strong><%= blog.author ? blog.author.username : 'Unknown Author' %></strong></span>
+                <span><i class="fa-solid fa-calendar-day me-2"></i><%= new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %></span>
+            </div>
+            
+            <p class="fs-5 lh-lg mb-5"><%= blog.description %></p>
+            
+            <% if(currentUser && blog.author && currentUser._id.equals(blog.author._id)) { %> 
+                <div class="d-flex gap-3 pt-4 border-top">
+                    <a href="/blogs/<%= blog._id %>/edit" class="btn btn-primary px-4"><i class="fa-solid fa-pen-to-square me-2"></i>Edit</a>
+                    <form method="POST" action="/blogs/<%= blog._id %>?_method=DELETE" class="m-0"> 
+                        <button class="btn btn-outline-danger px-4"><i class="fa-solid fa-trash me-2"></i>Delete</button>
+                    </form> 
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>

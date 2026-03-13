@@ -1,0 +1,31 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4 mt-2">
+    <h2 class="h2 mb-0">Discover Blogs</h2>
+    <% if(currentUser) { %>
+        <a href="/blogs/new" class="btn btn-primary"><i class="fa-solid fa-plus me-2"></i>Create New Blog</a>
+    <% } %>
+</div>
+
+<div class="row g-4">
+    <% for(let listing of allBlogs){ %>
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card blog-card h-100 shadow-sm">
+                <div class="card-img-wrapper">
+                    <img src="<%= listing.image %>" class="card-img-top" alt="<%= listing.title %>">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><b><%= listing.title %></b></h5>
+                    <p class="card-text text-muted"><%= listing.description.substring(0, 100) %>...</p>
+                    
+                    <div class="detail mt-2 small text-secondary">
+                        <span>Posted by: <b><%= listing.author ? listing.author.username : 'Anonymous' %></b></span>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pb-3">
+                    <a href="/blogs/<%= listing._id %>" class="btn btn-outline-primary btn-sm w-30">Read More</a>
+                </div>
+            </div> 
+        </div>
+    <% } %>
+</div>

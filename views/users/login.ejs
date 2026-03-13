@@ -1,0 +1,46 @@
+<% layout('/layouts/boilerplate') %>
+<div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-5">
+        <div class="auth-wrapper mt-5">
+            <div class="text-center mb-4">
+                <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <h2 class="fw-bold">Welcome Back</h2>
+                <p class="text-muted">Please enter your details to sign in.</p>
+            </div>
+            <form method="POST" action="/login" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input name="username" type="text" class="form-control" placeholder="Enter your username" required>
+                    <div class="invalid-feedback">Enter your username</div> 
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input name="password" type="password" class="form-control" placeholder="Enter your password" required>
+                    <div class="invalid-feedback">Enter your password</div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 py-2 fs-5">Sign In</button> 
+            </form>
+            <div class="text-center mt-4">
+                <p class="text-muted">Don't have an account? <a href="/signup" class="text-primary fw-semibold text-decoration-none">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (() => {
+      'use strict'
+      const forms = document.querySelectorAll('.needs-validation')
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+</script>
