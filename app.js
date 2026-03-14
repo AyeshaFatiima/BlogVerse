@@ -23,7 +23,7 @@ const blogRoutes = require("./routes/blogs.js");
 const userRoutes = require("./routes/users.js");
 
 const sessionOptions = {
-    secret: "mysupersecretcode",
+  secret: process.env.SECRET || "devsecret",
     resave: false,
     saveUninitialized: true,
     cookie: {
