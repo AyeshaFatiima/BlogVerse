@@ -1,21 +1,21 @@
 # ✍️ BlogVerse - A Full-Stack Blog Application
 
-BlogVerse ek robust full-stack web application hai jise **MERN stack** (MongoDB, Express.js, React, Node.js) ki foundation par banaya gaya hai. Is project mein users blogs create kar sakte hain, doosre users ke blogs padh sakte hain aur reviews chhod sakte hain.
+BlogVerse is a robust full-stack web application built using the **MERN stack** (MongoDB, Express.js, React, Node.js). This platform allows users to create, share, and explore engaging blog posts with a seamless user experience.
 
 ## 🚀 Features
 
-- **Authentication:** Passport.js ka use karke Secure User Login aur Signup functionality.
-- **CRUD Operations:** Users apne blogs create, read, update, aur delete kar sakte hain.
-- **Review System:** Har blog par users ratings aur comments de sakte hain.
-- **Security:** Environment variables (`dotenv`) ka use karke sensitive data ko secure kiya gaya hai.
-- **Validation:** Joi schema validation ka use karke data integrity maintain ki gayi hai.
-- **Responsive UI:** EJS Mate aur Custom CSS ke saath mobile-friendly design.
+- **User Authentication:** Secure Login and Signup functionality powered by Passport.js.
+- **Full CRUD Operations:** Users can Create, Read, Update, and Delete their own blog posts.
+- **Review & Rating System:** Interactive comment section for users to leave feedback and ratings on blogs.
+- **Data Validation:** Server-side validation implemented using Joi schemas to ensure data integrity.
+- **Error Handling:** Centralized error-handling middleware with custom `ExpressError` and `wrapAsync` utilities.
+- **Security:** Sensitive configuration managed via Environment Variables (`dotenv`).
+- **Responsive Design:** A clean and mobile-friendly UI built with EJS Mate and Bootstrap.
 
 ## 🛠️ Tech Stack
 
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB (Mongoose ODM)
-- **Templating:** EJS (Embedded JavaScript)
+- **Templating Engine:** EJS (Embedded JavaScript)
 - **Authentication:** Passport.js (Local Strategy)
-- **Styling:** Bootstrap, Custom CSS
-
+- **Styling:** Bootstrap 5, Custom CSS
